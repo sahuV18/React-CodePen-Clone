@@ -1,14 +1,47 @@
-body {
-  margin: 0;
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-.top-pane {
-  background-color: hsl(225, 6%, 25%);
+button{
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius:4px;
+    padding: .2rem;
 }
 
-.pane {
-  height: 50vh;
+button:hover{
+    color:white;
+    background: #222222;
+}
+
+.top-bar{
+  position: sticky;
+  background-color:whitesmoke;
+  height: 70px;
   display: flex;
+  padding: 15px;
+  justify-content: space-around;
+}
+
+.display{
+  position: sticky;
+  background-color: whitesmoke;
+  height: 30px;
+  text-align: center;
+}
+
+.top-pane{
+  background-color:black;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-gap: .31rem;
+}
+
+.bpane{
+  background-color:white;
 }
 
 .editor-container {
@@ -17,7 +50,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: .5rem;
-  background-color: hsl(225, 6%, 25%);
+  background-color: hsl(225, 16%, 20%);
+  height: 250px;
 }
 
 .editor-container.collapsed {
@@ -26,7 +60,7 @@ body {
 
 .editor-container.collapsed .CodeMirror-scroll {
   position: absolute;
-  overflow: hidden !important;
+  overflow: hidden ;
 }
 
 .expand-collapse-btn {
@@ -47,8 +81,21 @@ body {
   border-top-left-radius: .5rem;
 }
 
+.output{
+  display: flex;
+  margin-top: 8px;
+  justify-content: space-between;
+  background-color: hsl(225, 6%, 13%);
+  color: white;
+  padding: .5rem ;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
+  height: 35px;
+  
+}
+
 .CodeMirror {
-  height: 100% !important;
+  height: 100% ;
 }
 
 .code-mirror-wrapper {
@@ -56,4 +103,15 @@ body {
   border-bottom-right-radius: .5rem;
   border-bottom-left-radius: .5rem;
   overflow: hidden;
+}
+
+@media (max-width:620px){
+  .top-bar{
+    display:contents;
+    
+  }
+}
+
+.name{
+  padding: 1rem;
 }
